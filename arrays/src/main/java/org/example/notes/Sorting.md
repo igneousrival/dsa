@@ -21,7 +21,7 @@ Quick Sort is a sorting algorithm based on the divide-and-conquer paradigm. It s
     - Elements ≤ pivot are on the left.
     - Elements > pivot are on the right.
 - The pivot is placed in its correct sorted position.
-
+  If an element is less than or equal to the pivot, it is swapped with the largest encountered element, effectively dividing the array around the pivot point.
 ### Step 3: Recursive Sorting
 - The left subarray (`low` to `pivotIndex - 1`) is sorted recursively.
 - The right subarray (`pivotIndex + 1` to `high`) is sorted recursively.

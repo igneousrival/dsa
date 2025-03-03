@@ -24,13 +24,12 @@ public  class QuickSort {
         for (int j = low; j < high; j++) {
             // If current element is <= pivot
             if (arr[j] <= pivot) {
-                i++;
-                swap(arr, i, j);
+                swap(arr, ++i, j);
             }
         }
         // Place pivot in the correct position
-        swap(arr, i + 1, high);
-        return i + 1;
+        swap(arr, ++i, high);
+        return i;
     }
 
     private static void swap(int[] arr, int i, int j) {
