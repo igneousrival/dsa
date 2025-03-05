@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.classes.listandnode.Impl.LinkedListLImpl;
 import org.example.classes.listandnode.LinkedList;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -16,7 +17,7 @@ public class Main {
             System.out.println("i = " + i);
         }
 
-        LinkedList<Object> list = new LinkedList<>();
+        LinkedList<Object> list = new LinkedListLImpl<>();
         list.add(10);
         list.add("Hi");  // ✅ Now allowed
 
