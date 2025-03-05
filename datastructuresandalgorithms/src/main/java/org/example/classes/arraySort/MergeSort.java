@@ -1,4 +1,4 @@
-package org.example.classes.sort;
+package org.example.classes.arraySort;
 
 public class MergeSort {
 
