@@ -1,4 +1,4 @@
-package org.example.classes.listandnode;
+package org.example.classes.listandnode.nodes;
 
 public class Node<T> {
     private T val;

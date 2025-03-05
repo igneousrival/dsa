@@ -1,114 +1,55 @@
-# LinkedList and Node Implementation in Java
+# Linked List Implementations
 
 ## Overview
-This document provides an overview of a simple generic `LinkedList` implementation in Java. It includes a `Node` class to represent elements in the list and a `LinkedList` class that manages the list structure.
+This project contains implementations of singly and doubly linked lists in Java, with their corresponding node structures and interfaces.
 
-## Node Class
-The `Node` class represents an individual element in the linked list.
+## Files and Their Roles
 
-### Code:
-```java
-package org.example.classes.listandnode;
+### 1. **Node.java**
+- Represents a node in a singly linked list.
+- Stores a value and a reference to the next node.
+- Contains getter and setter methods.
 
-public class Node<T> {
-    private T val;
-    private Node<T> next;
+### 2. **DoubleNode.java**
+- Represents a node in a doubly linked list.
+- Stores a value, a reference to the next node, and a reference to the previous node.
+- Contains getter and setter methods.
 
-    public Node(T val) {
-        this.val = val;
-        this.next = null;
-    }
+### 3. **LinkedList.java** (Interface)
+- Defines a generic linked list structure.
+- Methods:
+    - `add(T val)`: Adds a new node with the given value.
+    - `printElements()`: Prints the elements of the list.
 
-    public T getVal() {
-        return val;
-    }
+### 4. **ReversibleList.java** (Interface)
+- Extends `LinkedList.java` to include reverse printing functionality.
+- Methods:
+    - `printReverse()`: Prints the elements in reverse order.
 
-    public void setVal(T val) {
-        this.val = val;
-    }
+### 5. **LinkedListLImpl.java** (Singly Linked List Implementation)
+- Implements `LinkedList.java`.
+- Uses `Node.java` to represent elements.
+- Methods:
+    - `add(T val)`: Adds a new node to the end of the list.
+    - `printElements()`: Prints the list elements sequentially.
+    - Getters for `head` and `tail`.
 
-    public Node<T> getNext() {
-        return next;
-    }
+### 6. **DoubleLinkedListImpl.java** (Doubly Linked List Implementation)
+- Implements `ReversibleList.java`.
+- Uses `DoubleNode.java` to represent elements.
+- Methods:
+    - `add(T val)`: Adds a new node to the end of the list.
+    - `printElements()`: Prints the list elements sequentially.
+    - `printReverse()`: Prints the list elements in reverse order.
+    - Getters and setters for `head` and `tail`.
 
-    public void setNext(Node<T> next) {
-        this.next = next;
-    }
-}
-```
+## Usage
+- Use `LinkedListLImpl` for singly linked list operations.
+- Use `DoubleLinkedListImpl` for doubly linked list operations, including reverse traversal.
+- Both implementations support dynamic addition and printing.
 
-### Description:
-- `val`: Stores the value of the node.
-- `next`: A reference to the next node in the list.
-- Constructor initializes the value and sets `next` to `null`.
-- Getter and setter methods are provided for both `val` and `next`.
+## Future Enhancements
+- Add deletion methods.
+- Implement search functionality.
+- Optimize memory usage where necessary.
 
-## LinkedList Class
-The `LinkedList` class represents a singly linked list.
-
-### Code:
-```java
-package org.example.classes.listandnode;
-
-public class LinkedList<T> {
-    private Node<T> head;
-    private Node<T> tail;
-
-    public LinkedList() {
-        this.head = null;
-        this.tail = null;
-    }
-
-    public void add(T val) {
-        Node<T> newNode = new Node<>(val);
-        if (head == null) {
-            head = newNode;
-        } else {
-            tail.setNext(newNode);
-        }
-        tail = newNode;
-    }
-
-    public Node<T> getHead() {
-        return head;
-    }
-
-    public Node<T> getTail() {
-        return tail;
-    }
-
-    public void printElements() {
-        Node<T> node = head;
-        while (node != null) {
-            System.out.print(node.getVal() + "---->");
-            node = node.getNext();
-        }
-        System.out.print("null\n");
-    }
-}
-```
-
-### Description:
-- `head`: Points to the first node in the list.
-- `tail`: Points to the last node in the list.
-- Constructor initializes an empty list.
-- `add(T val)`: Adds a new node to the end of the list.
-- `getHead()`: Returns the head node.
-- `getTail()`: Returns the tail node.
-- `printElements()`: Prints the elements of the list in order.
-
-## Usage Example
-```java
-public class Main {
-    public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.printElements(); // Output: 1---->2---->3---->null
-    }
-}
-```
-
-## Conclusion
-This implementation provides a simple yet effective way to create and manage a singly linked list using generic types in Java. The `LinkedList` class allows adding elements and printing the list, while the `Node` class manages individual elements.

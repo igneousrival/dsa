@@ -1,7 +1,7 @@
 package org.example.classes.listandnode.Impl;
 
 import org.example.classes.listandnode.LinkedList;
-import org.example.classes.listandnode.Node;
+import org.example.classes.listandnode.nodes.Node;
 
 public class LinkedListLImpl<T> implements LinkedList<T> {
     private Node<T> head;

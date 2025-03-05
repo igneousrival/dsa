@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.classes.listandnode.ReversibleList;
+import org.example.classes.listandnode.Impl.DoubleLinkedListImpl;
 import org.example.classes.listandnode.Impl.LinkedListLImpl;
 import org.example.classes.listandnode.LinkedList;
 
@@ -22,5 +24,13 @@ public class Main {
         list.add("Hi");  // ✅ Now allowed
 
         list.printElements();
+
+        ReversibleList<Object> dList= new DoubleLinkedListImpl<>();
+        dList.add(19);
+        dList.add(29);
+
+        dList.printReverse();
+        dList.printElements();
+
     }
 }
