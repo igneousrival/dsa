@@ -38,14 +38,12 @@ public class MergeSort {
                 arr[k++] = rightArray[j++];
             }
         }
-
-        while(i < leftSize){
-            arr[k++] = leftArray[i++];
+        int[ ] array = j == rightSize ? leftArray : rightArray;
+        int size = j == rightSize ? leftSize : rightSize;
+        int m = j == rightSize ? i : j;
+        while( m < size ){
+            arr[k++] = array[m++];
         }
-        while(j < rightSize){
-            arr[k++] = rightArray[j++];
-        }
-
     }
 
 
